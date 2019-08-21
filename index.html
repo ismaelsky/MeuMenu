@@ -2,94 +2,84 @@
 <html lang="pt-br">
 
 <head>
-  <!-- Meta tags Obrigat�rias -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Meta tags Obrigat�rias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Olá, mundo!</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Olá, mundo!</title>
 </head>
 
 <body>
-  <div class="container-fluid">
-    <div class="nav_menu fixed-top bg-light">
-      <nav class="nav_menu navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-          João Lanches <label id='l_mesa'></label>
-        </a>
-      </nav>
-      <table class="table table-bordered">
-        <tr>
-          <th scope="col">5 Items</th>
-          <th scope="col">Valor: R$ 30,00</th>
-          <th scope="col"><button class="btn btn-primary" type="submit">Botão</button></th>
-        </tr>
-      </table>
-    </div>
-    <div class="row">
-      <div id='alert' class='fixed-top'></div>
-      <div class="col-12">
-        <form class="selecionar_mesa form-signin">
-          <div class="text-center mb-4">
-            <br /><br /><br />
-            <img class="mb-4" src="./img/icon.png" alt="" width="72" height="72">
-            <h1 class="h3 mb-3 font-weight-normal">Lanchonete do j</h1>
-          </div>
-          <div class="form-label-group">
-            <input id='val_mesa' class="w-100 form-control mr-sm-2" type="number" placeholder="Nª da Mesa"
-              aria-label="Pesquisar" autofocus="" required="">
-            <br />
-          </div>
-          <div id='abrir_mesa' class="btn btn-lg btn-outline-success my-2 my-sm-0 btn-block">Abrir</div>
+    <div class="container-fluid">
+        <div class="nav_menu fixed-top bg-light">
+            <table class="table text-center">
+                <tr>
+                    <th>
+                        <h4 id='l_mesa'></h4>
+                    </th>
+                    <th>
+                        <h4 id='l_item'></h4>
+                    </th>
+                    <th>
+                        <h4 id='l_bebi'></h4>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div class="row">
+            <div id='alert' class='fixed-top'></div>
+            <div class="col-12">
+                <form class="selecionar_mesa form-signin">
+                    <div class="text-center mb-4">
+                        <br /><br /><br />
+                        <img class="mb-4" src="./img/icon.png" alt="" width="72" height="72">
+                        <h1 class="h3 mb-3 font-weight-normal">Lanchonete do j</h1>
+                    </div>
+                    <div class="form-label-group">
+                        <input id='val_mesa' class="w-100 form-control mr-sm-2" type="number" placeholder="Nª da Mesa" aria-label="Pesquisar" autofocus="" required="">
+                        <br />
+                    </div>
+                    <div id='abrir_mesa' class="btn btn-primary btn-lg my-2 my-sm-0 btn-block ">Abrir</div>
 
-          <p class="mt-5 mb-3 text-muted text-center">© 2017-2018</p>
-        </form>
+                    <p class="mt-5 mb-3 text-muted text-center btn-outline-primary fixed-bottom">© 2017-2018</p>
+                </form>
 
-      </div>
-    </div>
-    <div id='pos_catalogo' class="row">
-      <!--<figure class="figure">
-        <img src="img/hamburger.png" width="130" height="130" class="figure-img img-fluid rounded img-thumbnail"
-          alt="Lanche">
-        <figcaption class="figure-caption">Lanches</figcaption>
-      </figure>
-      <figure class="figure">
-        <img src="img/pizza.png" width="130" height="130" class="figure-img img-fluid rounded img-thumbnail"
-          alt="Pizza">
-        <figcaption class="figure-caption">Pizza</figcaption>
-      </figure>-->     
-    </div>
-    <div id='catalogo' class="row">
-      <div class="col-6">
-          <img src="img/hamburger.png" class="w-100 figure-img img-fluid rounded img-thumbnail" alt="Pastel">
-          <figcaption class="figure-caption">hamburger</figcaption>
-      </div>
-      <div class="col-6">
-          <img src="img/pastel.png" class="w-100 figure-img img-fluid rounded img-thumbnail" alt="Bebida">
-          <figcaption class="figure-caption">Pastel</figcaption>
-      </div>  
-      <div class="col-6">
-          <img src="img/pizza.png" class="w-100 figure-img img-fluid rounded img-thumbnail" alt="Pastel">
-          <figcaption class="figure-caption">Pizza</figcaption>
-      </div>
-      <div class="col-6">
-          <img src="img/bebidas.png" class="w-100 figure-img img-fluid rounded img-thumbnail" alt="Bebida">
-          <figcaption class="figure-caption">Refrigerante</figcaption>
-      </div>      
-    </div>
+            </div>
+        </div>
+        <div id='pos_catalogo' class="row">
+        </div>
+        <div id='catalogo' class="row">
+            <div class="col-6">
+                <img src="img/hamburger.png" class="w-100 figure-img img-fluid rounded img-thumbnail" alt="Pastel">
+                <figcaption class="figure-caption">Hamburger</figcaption>
+            </div>
+            <div class="col-6">
+                <img src="img/pastel.png" class="w-100 figure-img img-fluid rounded img-thumbnail" alt="Bebida">
+                <figcaption class="figure-caption">Pastel</figcaption>
+            </div>
+            <div class="col-6">
+                <img src="img/pizza.png" class="w-100 figure-img img-fluid rounded img-thumbnail" alt="Pastel">
+                <figcaption class="figure-caption">Pizza</figcaption>
+            </div>
+            <div class="col-6">
+                <img src="img/bebidas.png" class="w-100 figure-img img-fluid rounded img-thumbnail" alt="Bebida">
+                <figcaption class="figure-caption">Bebidas</figcaption>
+            </div>
+        </div>
 
-  </div>
-  <button id='btn_finalizar' type="button" class="btn btn-primary btn-lg btn-block fixed-bottom">Finalizar</button>
+    </div>
+    <button id='btn_finalizar' type="button" class="btn btn-primary btn-lg btn-block fixed-bottom">Visualizar</button>
 
-  <!-- JavaScript (Opcional) -->
-  <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
-  <script src="./js/jquery-3.3.1.min.js"></script>
-  <script src="./popper.min.js"></script>
-  <script src="./js/bootstrap.min.js"></script>
-  <script src="./js/index.js"></script>
-  <script src="./js/main.js"></script>
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

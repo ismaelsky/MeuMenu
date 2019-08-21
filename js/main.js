@@ -1,13 +1,15 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
-    $('#abrir_mesa').click(function () {
+    $('#abrir_mesa').click(function() {
         var mesa = $('#val_mesa').val();
+        var item = "3";
+        var bebi = "2";
 
         if (mesa == false) {
             $("#alert").html("<div class='alert alert-danger' role='alert'>Favor, informa sua mesa</div>");
         } else {
             $("#l_mesa").html('');
-            $(".nav_menu").show('');           
+            $(".nav_menu").show('');
             document.getElementById("catalogo").style.display = "flex";
             //$("#catalogo").attr('display','flex');
             $("#btn_finalizar").show('');
@@ -15,9 +17,13 @@ $(document).ready(function () {
             $(".alert").hide('');
             $(".selecionar_mesa").hide();
 
-            $('#l_mesa').append("<span class='badge badge-primary span_mesa'>Mesa: " + mesa + "</span>");
-          
-            
+            $('#l_mesa').append("<span class='badge badge-primary p-2'>Mesa <span class='badge badge-light'>" + mesa + "</span></span>");
+
+            $('#l_item').append("<span class='badge badge-primary p-2'>Pedidos <span class='badge badge-light'>" + item + "</span></span>");
+
+            $('#l_bebi').append("<span class='badge badge-primary p-2'>Bebida <span class='badge badge-light'>" + bebi + "</span></span>");
+
+
         }
 
     });
