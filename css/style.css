@@ -1,9 +1,9 @@
-.nav_menu, #catalogo, #pos_catalogo, #btn_finalizar, #items_list{
-  display: none;
+.menu,
+#catalogo,
+#pos_catalogo,
+#btn_finalizar,
+#items_list,
+#comanda,
+#btn_hide_coman {
+    display: none;
 }
-#pos_catalogo{
-  display: block;
-  position: relative;
-  padding-top: 50px;
-}
-

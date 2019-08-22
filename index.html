@@ -8,28 +8,53 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Catalogo</title> 
+
+    <title>Catalogo</title>
 </head>
+
 <body>
     <div class="container-fluid">
-        <div class="nav_menu fixed-bottom bg-light">
-            <table class="table text-center">
-                <tr>
-                    <th>
-                        <h4 id='l_mesa'></h4>
-                    </th>
-                    <th>
-                        <h4 id='l_item'></h4>
-                    </th>
-                    <th> 
-                        <h4 id='l_bebi'></h4>
-                    </th>
-                </tr>
-            </table>
-            <button id='btn_finalizar' type="button" class="btn btn-primary btn-lg btn-block">Visualizar</button>
-           
+        <div class="menu navbar-light fixed-bottom bg-light">
+            <div class="row">
+                <div class="col text-center">
+                    <h4 id='l_item'></h4>
+                </div>
+                <div class="col text-center">
+                    <h4 id='l_bebi'></h4>
+                </div>
+            </div>
+            <button id='btn_show_coman' type="button" class="btn btn-primary btn-lg btn-block">Visualizar</button>
         </div>
+
+
+
+        <div id='comanda' class='fixed-top w-100 h-100 bg-info'>
+            <nav class="col-12 navbar navbar-light bg-light">
+                <span class="navbar-brand mb-0 h1"></h4></span>
+                <h4 id='l_mesa'></h4>
+                <button type="button" class="btn btn-outline-success float-right">Finalizar Pedido !</button>
+            </nav>
+            <div class="mt-1 list-group-item list-group-item-action flex-column align-items-start bg-light">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 id='mod_nome_item' class="mb-1">X-Frango</h5>
+                    <small id='mod_preco_item'>Quant: 1</small>
+                </div>
+                <p id='mod_desc_item' class="mb-1">Normal</p>
+            </div>
+            <div class="list-group-item list-group-item-action flex-column align-items-start bg-light">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 id='mod_nome_item' class="mb-1">Hamburger</h5>
+                    <small id='mod_preco_item'>Quant: 2</small>
+                </div>
+                <p id='mod_desc_item' class="mb-1">Sem Alface</p>
+            </div>
+            <button id='btn_hide_coman' type="button" class="btn btn-outline-light btn-lg btn-block fixed-bottom">Voltar</button>
+        </div>
+
+
+
         <div class="row">
             <div id='alert' class='fixed-top'></div>
             <div class="col-12">
@@ -40,8 +65,7 @@
                         <h1 class="h3 mb-3 font-weight-normal">Lanchonete do j</h1>
                     </div>
                     <div class="form-label-group">
-                        <input id='val_mesa' class="w-100 form-control mr-sm-2" type="number" placeholder="Nª da Mesa"
-                            aria-label="Pesquisar" autofocus="" required="">
+                        <input id='val_mesa' class="w-100 form-control mr-sm-2" type="number" placeholder="Nª da Mesa" aria-label="Pesquisar" autofocus="" required="">
                         <br />
                     </div>
                     <div id='abrir_mesa' class="btn btn-primary btn-lg my-2 my-sm-0 btn-block ">Abrir</div>
@@ -51,9 +75,13 @@
 
             </div>
         </div>
-        <div id='pos_catalogo' class="row">
-        </div>
+
+
+
         <div id='catalogo' class="row">
+            <nav class=" mb-1 col-12 navbar navbar-light bg-light justify-content-end">
+                <h4 id='l_mesa'></h4> <button type="button" class="btn btn-outline-success "><i class="fas fa-qrcode"></i></button>
+            </nav>
             <div class="col-6 item_catg" alt="Lanche">
                 <img src="img/hamburger.png" class="w-100 figure-img img-fluid rounded img-thumbnail" alt="Lanche">
                 <figcaption class="figure-caption">Lanche</figcaption>
@@ -72,6 +100,9 @@
             </div>
         </div>
 
+
+
+
         <div id='items_list' class="row">
             <div class='col-12'>
                 <nav aria-label="breadcrumb">
@@ -81,11 +112,10 @@
                     </ol>
                 </nav>
                 <ul id='box_list_itens' class="list-group">
-                   <!-- recebe dados de main.js função click(.item_catg)-->                  
+                    <!-- recebe dados de main.js função click(.item_catg)-->
                 </ul>
 
-                <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -113,8 +143,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <textarea placeholder="Alguma observação?" class="form-control" id="mod_obs_item"
-                                        rows="3"></textarea>
+                                    <textarea placeholder="Alguma observação?" class="form-control" id="mod_obs_item" rows="3"></textarea>
                                 </div>
                             </div>
                             <div class="modal-footer">

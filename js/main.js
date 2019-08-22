@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
     comanda = [];
 
@@ -24,7 +24,7 @@ $(document).ready(function () {
         { id: "3", nome: 'Kuat Refrig 1L', valor: '6,00', descricao: 'Pet 1L' }
     ];
 
-    $('#abrir_mesa').click(function () {
+    $('#abrir_mesa').click(function() {
         var mesa = $('#val_mesa').val();
         var item = "3";
         var bebi = "2";
@@ -33,7 +33,7 @@ $(document).ready(function () {
             $("#alert").html("<div class='alert alert-danger' role='alert'>Favor, informa sua mesa</div>");
         } else {
             $("#l_mesa").html('');
-            $(".nav_menu").show('');
+            $(".menu").show('');
             document.getElementById("catalogo").style.display = "flex";
             //$("#catalogo").attr('display','flex');
             $("#btn_finalizar").show('');
@@ -41,17 +41,17 @@ $(document).ready(function () {
             $(".alert").hide('');
             $(".selecionar_mesa").hide();
 
-            $('#l_mesa').append("<span class='badge badge-primary p-2'>Mesa <span class='badge badge-light'>" + mesa + "</span></span>");
+            $('#l_mesa').append("Mesa " + mesa + " ");
 
-            $('#l_item').append("<span class='badge badge-primary p-2'>Pedidos <span class='badge badge-light'>" + item + "</span></span>");
+            $('#l_item').append("<span class='mt-1 badge badge-light p-2'>Pedidos <span class='badge badge-dark'>" + item + "</span></span>");
 
-            $('#l_bebi').append("<span class='badge badge-primary p-2'>Bebida <span class='badge badge-light'>" + bebi + "</span></span>");
+            $('#l_bebi').append("<span class='mt-1 badge badge-light p-2'>Bebida <span class='badge badge-dark'>" + bebi + "</span></span>");
 
         }
 
     });
 
-    $('.item_catg').click(function () {
+    $('.item_catg').click(function() {
         $("#catalogo").hide('');
         $('#box_list_itens').html('');
         document.getElementById("items_list").style.display = "flex";
@@ -62,7 +62,7 @@ $(document).ready(function () {
         box_list_item = '';
 
         if (nome_list == 'Lanche') {
-            $.each(Lanche, function (index, tb_lista) {
+            $.each(Lanche, function(index, tb_lista) {
                 box_list_item = " " +
                     "<li class='item_l list-group-item list-group-item-action flex-column align-items-start'" +
                     "data-toggle='modal' data-target='#modalExemplo' alt='" + tb_lista.nome + ";" + tb_lista.valo + ";" + tb_lista.descricao + ";" + tb_lista.id + "'>" +
@@ -78,7 +78,7 @@ $(document).ready(function () {
         };
 
         if (nome_list == 'Pastel') {
-            $.each(Pastel, function (index, tb_lista) {
+            $.each(Pastel, function(index, tb_lista) {
                 box_list_item = " " +
                     "<li class='item_l list-group-item list-group-item-action flex-column align-items-start'" +
                     "data-toggle='modal' data-target='#modalExemplo' alt='" + tb_lista.nome + ";" + tb_lista.valo + ";" + tb_lista.descricao + ";" + tb_lista.id + "'>" +
@@ -94,7 +94,7 @@ $(document).ready(function () {
         };
 
         if (nome_list == 'Pizza') {
-            $.each(Pizza, function (index, tb_lista) {
+            $.each(Pizza, function(index, tb_lista) {
                 box_list_item = " " +
                     "<li class='item_l list-group-item list-group-item-action flex-column align-items-start'" +
                     "data-toggle='modal' data-target='#modalExemplo' alt='" + tb_lista.nome + ";" + tb_lista.valo + ";" + tb_lista.descricao + ";" + tb_lista.id + "'>" +
@@ -111,7 +111,7 @@ $(document).ready(function () {
         };
 
         if (nome_list == 'Bebida') {
-            $.each(Bebida, function (index, tb_lista) {
+            $.each(Bebida, function(index, tb_lista) {
                 box_list_item = " " +
                     "<li class='item_l list-group-item list-group-item-action flex-column align-items-start'" +
                     "data-toggle='modal' data-target='#modalExemplo' alt='" + tb_lista.nome + ";" + tb_lista.valo + ";" + tb_lista.descricao + ";" + tb_lista.id + "'>" +
@@ -140,14 +140,14 @@ $(document).ready(function () {
 
 
     });
-    $('.volt_ctlg').click(function () {
+    $('.volt_ctlg').click(function() {
         $("#items_list").hide('');
         $('#sub_Local').html(' ');
         document.getElementById("catalogo").style.display = "flex";
 
     });
 
-    $('.item_l').click(function () {
+    $('.item_l').click(function() {
         $("#mod_nome_item").html('');
         $('#mod_preco_item').html('');
         $('#mod_desc_item').html(' ');
@@ -166,8 +166,8 @@ $(document).ready(function () {
         $('#btn_mod_add').attr('alt', item[4]);
     });
 
-    
-    $('#btn_mod_add').click(function () {
+
+    $('#btn_mod_add').click(function() {
 
         var item_comanda1 = $("#mod_nome_item").html();
         var item_comanda2 = $('#mod_preco_item').html();
@@ -182,8 +182,20 @@ $(document).ready(function () {
         console.log(comanda);
 
     });
+    $('#btn_show_coman').click(function() {
+        $("#btn_show_coman").hide();
+        $("#btn_hide_coman").show();
+        $("#comanda").show();
+    });
+    $('#btn_hide_coman').click(function() {
+        $("#btn_show_coman").show();
+        $("#btn_hide_coman").hide();
+        $("#comanda").hide();
+    });
 
-    $('#teste').click(function () {
+
+
+    $('#teste').click(function() {
 
         var arr = [
             { id: 1, name: 'Duplicado' },
@@ -198,7 +210,7 @@ $(document).ready(function () {
 
         // Opção 2
         function removerPorId2(array, id) {
-            return array.filter(function (el) {
+            return array.filter(function(el) {
                 return el.id !== id;
             });
         }
