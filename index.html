@@ -9,12 +9,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Olá, mundo!</title>
+    <title>Catalogo</title> 
 </head>
-
 <body>
     <div class="container-fluid">
-        <div class="nav_menu fixed-top bg-light">
+        <div class="nav_menu fixed-bottom bg-light">
             <table class="table text-center">
                 <tr>
                     <th>
@@ -23,11 +22,13 @@
                     <th>
                         <h4 id='l_item'></h4>
                     </th>
-                    <th>
+                    <th> 
                         <h4 id='l_bebi'></h4>
                     </th>
                 </tr>
             </table>
+            <button id='btn_finalizar' type="button" class="btn btn-primary btn-lg btn-block">Visualizar</button>
+           
         </div>
         <div class="row">
             <div id='alert' class='fixed-top'></div>
@@ -39,7 +40,8 @@
                         <h1 class="h3 mb-3 font-weight-normal">Lanchonete do j</h1>
                     </div>
                     <div class="form-label-group">
-                        <input id='val_mesa' class="w-100 form-control mr-sm-2" type="number" placeholder="Nª da Mesa" aria-label="Pesquisar" autofocus="" required="">
+                        <input id='val_mesa' class="w-100 form-control mr-sm-2" type="number" placeholder="Nª da Mesa"
+                            aria-label="Pesquisar" autofocus="" required="">
                         <br />
                     </div>
                     <div id='abrir_mesa' class="btn btn-primary btn-lg my-2 my-sm-0 btn-block ">Abrir</div>
@@ -52,26 +54,86 @@
         <div id='pos_catalogo' class="row">
         </div>
         <div id='catalogo' class="row">
-            <div class="col-6">
-                <img src="img/hamburger.png" class="w-100 figure-img img-fluid rounded img-thumbnail" alt="Pastel">
-                <figcaption class="figure-caption">Hamburger</figcaption>
+            <div class="col-6 item_catg" alt="Lanche">
+                <img src="img/hamburger.png" class="w-100 figure-img img-fluid rounded img-thumbnail" alt="Lanche">
+                <figcaption class="figure-caption">Lanche</figcaption>
             </div>
-            <div class="col-6">
-                <img src="img/pastel.png" class="w-100 figure-img img-fluid rounded img-thumbnail" alt="Bebida">
+            <div class="col-6 item_catg" alt="Pastel">
+                <img src="img/pastel.png" class="w-100 figure-img img-fluid rounded img-thumbnail" alt="Pastel">
                 <figcaption class="figure-caption">Pastel</figcaption>
             </div>
-            <div class="col-6">
-                <img src="img/pizza.png" class="w-100 figure-img img-fluid rounded img-thumbnail" alt="Pastel">
+            <div class="col-6 item_catg" alt="Pizza">
+                <img src="img/pizza.png" class="w-100 figure-img img-fluid rounded img-thumbnail" alt="Pizza">
                 <figcaption class="figure-caption">Pizza</figcaption>
             </div>
-            <div class="col-6">
+            <div class="col-6 item_catg" alt="Bebida">
                 <img src="img/bebidas.png" class="w-100 figure-img img-fluid rounded img-thumbnail" alt="Bebida">
                 <figcaption class="figure-caption">Bebidas</figcaption>
             </div>
         </div>
 
+        <div id='items_list' class="row">
+            <div class='col-12'>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="volt_ctlg breadcrumb-item"><a href="#">Catalogo</a></li>
+                        <li id='sub_Local' class="breadcrumb-item active" aria-current="page"> </li>
+                    </ol>
+                </nav>
+                <ul id='box_list_itens' class="list-group">
+                   <!-- recebe dados de main.js função click(.item_catg)-->                  
+                </ul>
+
+                <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Detalhes</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 id='mod_nome_item' class="mb-1">Hamburger</h5>
+                                        <small id='mod_preco_item'>R$: 15,00</small>
+                                    </div>
+                                    <p id='mod_desc_item' class="mb-1">Hamburger,Batata,Tomate</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Quantidade:</label>
+                                    <select id='mod_qtd_item' class="form-control" id="exampleFormControlSelect1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <textarea placeholder="Alguma observação?" class="form-control" id="mod_obs_item"
+                                        rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button id='btn_mod_add' alt='' type="button" class="btn btn-primary">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
+
     </div>
-    <button id='btn_finalizar' type="button" class="btn btn-primary btn-lg btn-block fixed-bottom">Visualizar</button>
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->

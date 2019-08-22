@@ -1,6 +1,30 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $('#abrir_mesa').click(function() {
+    comanda = [];
+
+
+    Lanche = [
+        { id: "1", nome: 'Hamburger', valor: '10,00', descricao: 'Hamburger,Batata,Queijo' },
+        { id: "2", nome: 'Misto', valor: '7,00', descricao: 'Queijo,Presunto' },
+        { id: "3", nome: 'Hot Dog', valor: '10,00', descricao: 'HotDog' }
+    ];
+    Pastel = [
+        { id: "1", nome: 'Carne', valor: '5,00', descricao: 'Carne e Queijo' },
+        { id: "2", nome: 'Frango', valor: '5,00', descricao: 'Frango e Queijo' },
+        { id: "3", nome: 'Queijo e Presunto', valor: '6,00', descricao: 'Queijo e Presunto' }
+    ];
+    Pizza = [
+        { id: "1", nome: 'Calabreza', valor: '15,00', descricao: 'Calabreza,Queijo, Orêgano' },
+        { id: "2", nome: 'Frango', valor: '15,00', descricao: 'Frango,Queijo, Orêgano' },
+        { id: "3", nome: 'Queijo e Presunto', valor: '16,00', descricao: 'Queijo, Presunto e Orêgano' }
+    ];
+    Bebida = [
+        { id: "1", nome: 'Suco', valor: '5,00', descricao: 'Copo 500ML' },
+        { id: "2", nome: 'Coca-Cola Refrig 1L', valor: '6,00', descricao: 'Pet 1L' },
+        { id: "3", nome: 'Kuat Refrig 1L', valor: '6,00', descricao: 'Pet 1L' }
+    ];
+
+    $('#abrir_mesa').click(function () {
         var mesa = $('#val_mesa').val();
         var item = "3";
         var bebi = "2";
@@ -23,10 +47,169 @@ $(document).ready(function() {
 
             $('#l_bebi').append("<span class='badge badge-primary p-2'>Bebida <span class='badge badge-light'>" + bebi + "</span></span>");
 
-
         }
 
     });
+
+    $('.item_catg').click(function () {
+        $("#catalogo").hide('');
+        $('#box_list_itens').html('');
+        document.getElementById("items_list").style.display = "flex";
+        var nome_list = $(this).attr('alt');
+
+        $('#sub_Local').append(nome_list);
+
+        box_list_item = '';
+
+        if (nome_list == 'Lanche') {
+            $.each(Lanche, function (index, tb_lista) {
+                box_list_item = " " +
+                    "<li class='item_l list-group-item list-group-item-action flex-column align-items-start'" +
+                    "data-toggle='modal' data-target='#modalExemplo' alt='" + tb_lista.nome + ";" + tb_lista.valo + ";" + tb_lista.descricao + ";" + tb_lista.id + "'>" +
+                    "<div class='d-flex w-100 justify-content-between'>" +
+                    "<h5 class='mb-1'>" + tb_lista.nome + "</h5>" +
+                    "<small>" + tb_lista.valor + "</small>" +
+                    "</div>" +
+                    "<p class='mb-1'>" + tb_lista.descricao + "</p>" +
+                    "</li>";
+
+                $('#box_list_itens').append(box_list_item);
+            });
+        };
+
+        if (nome_list == 'Pastel') {
+            $.each(Pastel, function (index, tb_lista) {
+                box_list_item = " " +
+                    "<li class='item_l list-group-item list-group-item-action flex-column align-items-start'" +
+                    "data-toggle='modal' data-target='#modalExemplo' alt='" + tb_lista.nome + ";" + tb_lista.valo + ";" + tb_lista.descricao + ";" + tb_lista.id + "'>" +
+                    "<div class='d-flex w-100 justify-content-between'>" +
+                    "<h5 class='mb-1'>" + tb_lista.nome + "</h5>" +
+                    "<small>" + tb_lista.valor + "</small>" +
+                    "</div>" +
+                    "<p class='mb-1'>" + tb_lista.descricao + "</p>" +
+                    "</li>";
+
+                $('#box_list_itens').append(box_list_item);
+            });
+        };
+
+        if (nome_list == 'Pizza') {
+            $.each(Pizza, function (index, tb_lista) {
+                box_list_item = " " +
+                    "<li class='item_l list-group-item list-group-item-action flex-column align-items-start'" +
+                    "data-toggle='modal' data-target='#modalExemplo' alt='" + tb_lista.nome + ";" + tb_lista.valo + ";" + tb_lista.descricao + ";" + tb_lista.id + "'>" +
+                    "<div class='d-flex w-100 justify-content-between'>" +
+                    "<h5 class='mb-1'>" + tb_lista.nome + "</h5>" +
+                    "<small>" + tb_lista.valor + "</small>" +
+                    "</div>" +
+                    "<p class='mb-1'>" + tb_lista.descricao + "</p>" +
+                    "</li>";
+
+                $('#box_list_itens').append(box_list_item);
+
+            });
+        };
+
+        if (nome_list == 'Bebida') {
+            $.each(Bebida, function (index, tb_lista) {
+                box_list_item = " " +
+                    "<li class='item_l list-group-item list-group-item-action flex-column align-items-start'" +
+                    "data-toggle='modal' data-target='#modalExemplo' alt='" + tb_lista.nome + ";" + tb_lista.valo + ";" + tb_lista.descricao + ";" + tb_lista.id + "'>" +
+                    "<div class='d-flex w-100 justify-content-between'>" +
+                    "<h5 class='mb-1'>" + tb_lista.nome + "</h5>" +
+                    "<small>" + tb_lista.valor + "</small>" +
+                    "</div>" +
+                    "<p class='mb-1'>" + tb_lista.descricao + "</p>" +
+                    "</li>";
+
+                $('#box_list_itens').append(box_list_item);
+
+            });
+        };
+
+
+
+
+
+
+
+
+
+
+
+
+
+    });
+    $('.volt_ctlg').click(function () {
+        $("#items_list").hide('');
+        $('#sub_Local').html(' ');
+        document.getElementById("catalogo").style.display = "flex";
+
+    });
+
+    $('.item_l').click(function () {
+        $("#mod_nome_item").html('');
+        $('#mod_preco_item').html('');
+        $('#mod_desc_item').html(' ');
+        $('#mod_qtd_item').val('1');
+        $('#mod_obs_item').html('');
+        $('#btn_mod_add').attr('alt', '');
+
+
+        var item = $(this).attr('alt');
+        var item = item.split(";");
+
+        $("#mod_nome_item").append(item[0]);
+        $('#mod_preco_item').append(item[1]);
+        $('#mod_desc_item').append(item[2]);
+        $('#mod_obs_item').append(item[3]);
+        $('#btn_mod_add').attr('alt', item[4]);
+    });
+
+    
+    $('#btn_mod_add').click(function () {
+
+        var item_comanda1 = $("#mod_nome_item").html();
+        var item_comanda2 = $('#mod_preco_item').html();
+        var item_comanda3 = $('#mod_desc_item').html();
+        var item_comanda4 = $('#mod_qtd_item').val();
+        var item_comanda5 = $('#mod_obs_item').val();
+
+        var item_codg = Math.floor((Math.random() * 1000) + 1);
+
+        var item = { id: item_codg, nome: item_comanda1, preco: item_comanda2, descricao: item_comanda3, quantidade: item_comanda4, obs: item_comanda5 };
+        comanda.push(item);
+        console.log(comanda);
+
+    });
+
+    $('#teste').click(function () {
+
+        var arr = [
+            { id: 1, name: 'Duplicado' },
+            { id: 2, name: 'John Snow' },
+            { id: 3, name: 'Michael Scolfield' },
+            { id: 4, name: 'Dexter Morgan' }
+        ];
+
+        console.log(arr);
+
+        arr = removerPorId2(arr, 2);
+
+        // Opção 2
+        function removerPorId2(array, id) {
+            return array.filter(function (el) {
+                return el.id !== id;
+            });
+        }
+        console.log(arr);
+
+
+
+    });
+
+
+
 
 
 

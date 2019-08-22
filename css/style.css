@@ -1,9 +1,9 @@
-.nav_menu, #catalogo, #pos_catalogo, #btn_finalizar{
+.nav_menu, #catalogo, #pos_catalogo, #btn_finalizar, #items_list{
   display: none;
 }
 #pos_catalogo{
   display: block;
   position: relative;
-  padding-top: 150px;
+  padding-top: 50px;
 }
 
